@@ -5,9 +5,9 @@ import mongoose from "mongoose";
 const UserSchema = new mongoose.Schema(
     {
         _id:{type:String,required:true},
-        _name:{type:String,required:true},
-        _email:{type:String,required:true},
-        _image:{type:String,required:false}
+        name:{type:String,required:true},
+        email:{type:String,required:true},
+        image:{type:String,required:false}
     },
     {timestamps:true}
 );

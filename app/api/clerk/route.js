@@ -1,4 +1,3 @@
-
 import { Webhook } from "svix";
 import connectDB from "../../../config/db";
 import User from "../../../models/User";
@@ -12,7 +11,7 @@ export async function POST(req) {
     const headerPayload = headers();
     const svixHeaders = {
       "svix-id": headerPayload.get("svix-id"),
-      "svix-timestamp": headerPayload.get("svix-timestamp"),
+      "svix-timestamp": headerPayload.get("svix-timestamp"), // ✅ fixed
       "svix-signature": headerPayload.get("svix-signature"),
     };
 
