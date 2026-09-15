@@ -4,7 +4,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { AppContextProvider } from "@/context/AppContext";
 import "./globals.css";
 
-const inter = Inter ({
+const inter = Inter({
   weight: "400",
   variable: "--font-inter",
   subsets: ["latin"],

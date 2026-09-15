@@ -1,7 +1,7 @@
 import mongoose from "mongoose";
 
 let cached=global.mongoose || {conn:null,promise:null};
-global.mongoose = cached;//added
+//global.mongoose = cached;//added
 
 export default async function connectDB() {
     if(cached.conn) return cached.conn;
@@ -13,7 +13,7 @@ export default async function connectDB() {
             cached.conn= await cached.promise;
         }catch(error){
             console.error("Error to connect MongoDB : ",error);
-            cached.promise = null;//added
+            //cached.promise = null;//added
         }
     }
     return cached.conn;
