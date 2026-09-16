@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import "./globals.css";
+import "./prism.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { AppContextProvider } from "@/context/AppContext";
-import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({
   weight: "400",
@@ -28,7 +30,14 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         lang="en"
         className={`${inter.className} h-full antialiased`}
       >
-        <body className="min-h-full flex flex-col">{children}</body>
+        <body className="min-h-full flex flex-col">
+          <Toaster toastOptions={
+            {
+              success: {style:{background:"black", color:"white"}},
+              error: {style:{background:"black", color:"white"}}
+            }
+          } />
+          {children}</body>
       </html>
       </AppContextProvider>
     </ClerkProvider>
